@@ -243,6 +243,182 @@ main {
      object-fit: contain;
 }
 
+/*----TEAM PAGE---------*/
+.team-page {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.team-page__description {
+  width: 100%;
+  margin-bottom: 50px;
+}
+
+.team-page__description h1 {
+  width: 100%;
+  padding-bottom: 30px;
+  font-family: "Helvetica", sans-serif;
+  text-transform: uppercase;
+  color: #838977;
+  letter-spacing: 2px;
+}
+
+.team-page__description p {
+  margin-top: 50px;
+}
+
+.team-page__payers-container {
+  width: 100%;
+}
+
+.team-page__payers-container h1 {
+  width: 100%;
+  padding-bottom: 30px;
+  font-family: "Helvetica", sans-serif;
+  text-transform: uppercase;
+  color: #838977;
+  letter-spacing: 2px;
+}
+
+.team-page__player-list {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.team-page__player-list-item {
+  width: 100%;
+  background-color: #E0E5D6;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+.team-page__player-list-item .player-thumb {
+  width: 60px;
+  height: 60px;
+  background-color: grey;
+  border-radius: 50%;
+  overflow: hidden;
+}
+
+.team-page__player-list-item .player-thumb img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+
+.team-page__player-list-item h2 {
+  width: auto;
+}
+
+.team-page__player-list-item .player-edit {
+  width: 100%;
+  display: none;
+}
+
+.team-page__player-list-item .player-edit form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 20px 0 10px 0;
+}
+
+.team-page__player-list-item .player-edit form input {
+  width: 100%;
+  height: 60px;
+  border-radius: 30px;
+  border: 0;
+  margin-bottom: 10px;
+  padding: 0 20px;
+  font-size: 1.2rem;
+}
+
+.team-page__player-list-item .player-edit form button {
+  width: 100%;
+  height: 60px;
+  border-radius: 30px;
+  background-color: #838977;
+  border: 0;
+  font-size: 1.2rem;
+  color: #E0E5D6;
+}
+
+.team-page__player-addition {
+  width: 100%;
+  background-color: #838977;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.team-page__player-addition form {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  padding: 20px 10px 10px 10px;
+}
+
+.team-page__player-addition form input {
+  width: 100%;
+  height: 60px;
+  border-radius: 30px;
+  border: 0;
+  font-family: "Helvetica", sans-serif;
+  font-size: 1.5rem;
+  padding: 0 20px;
+  color: #838977;
+  margin-bottom: 10px;
+}
+
+.team-page__player-addition form input:focus {
+  outline: none;
+}
+
+.team-page__player-addition form button {
+  min-width: 60px;
+  margin-left: 20px;
+}
+
 /*---------------------------MEDIA QUERIES-----------------------------------------------*/
 @media screen and (min-width: 980px) {
   /*---HEADER -------*/
@@ -279,6 +455,17 @@ main {
   }
   .teams-container__list-item {
     width: 30%;
+  }
+  .team-page {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .team-page__description {
+    width: 100%;
+    margin-bottom: 0;
+    padding-right: 50px;
   }
 }
 /*# sourceMappingURL=App.css.map */
