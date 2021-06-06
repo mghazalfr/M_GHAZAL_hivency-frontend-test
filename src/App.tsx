@@ -3,11 +3,18 @@ import './App.css';
 
 //Import Components
 import Header from './components/Header';
+import SideNav from './components/SideNav';
+
+//Import Dependencies
+import {HashRouter, Route} from 'react-router-dom'
 
 function App() {
   return (
     <div className="App">
-      <Header />
+      <HashRouter>
+        <Header />
+        <SideNav />
+      </HashRouter>
     </div>
   );
 }
