@@ -16,3 +16,6 @@ type Teams = {
 }
 
 type TeamPageHandler = (selectedId:string) => void;
+
+type SetPlayers = (React.Dispatch<React.SetStateAction<Array<Players>>>);
+type SetNewPlayer = (React.Dispatch<React.SetStateAction<Players>>);

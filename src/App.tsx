@@ -5,6 +5,7 @@ import './App.css';
 import Header from './components/Header';
 import SideNav from './components/SideNav';
 import TeamsList from './components/TeamsList'
+import TeamPage from './components/TeamPage'
 
 //Import Dependencies
 import axios from 'axios';
@@ -22,6 +23,8 @@ const App: React.FC = () => {
   const [ teamId, setTeamId ] = useState("133702");
   // state that defines the loading before rendering the data
   const [ isLoading, setIsLoading ] = useState(Boolean);
+  // state that hold the new player
+  const [ newPlayer, setNewPlayer ] = useState<Players>(Object);
 
 
   //USEEffect-------//
@@ -64,6 +67,19 @@ const App: React.FC = () => {
               <TeamsList {...props}
                 teamsData = {teams}
                 teamPageHandler = {teamPageHandler}
+              />
+            )}
+          ></Route>
+          <Route
+            path="/team"
+            render={(props) => (
+              <TeamPage {...props}
+                teamsData = {teams}
+                playersData = {players}
+                setPlayers = {setPlayers}
+                setNewPlayer = {setNewPlayer}
+                newPlayer = {newPlayer}
+                isLoading = {isLoading}
               />
             )}
           ></Route>
