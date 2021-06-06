@@ -243,6 +243,11 @@ main {
             h2 {
                 width: auto;
             }
+            .buttons-container {
+                button > svg {
+                    pointer-events: none;
+                }
+            }
             .player-edit {
                 width: 100%;
                 display: none;
