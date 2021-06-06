@@ -2,6 +2,9 @@
 
 import React from 'react'
 
+//Import Components
+import TeamCard from './TeamCard';
+
 interface TeamsListProps {
     teamsData: Teams[] | undefined;
     teamPageHandler: TeamPageHandler;
@@ -12,7 +15,7 @@ const TeamsList: React.FC<TeamsListProps> = ({ teamsData, teamPageHandler }) => 
         <section className='teams-container'>
             <h1>All Teams</h1>
             <ul className='teams-container__list'>
-                {/* {teamsData
+                {teamsData
                 ? teamsData.map( (team, index) => (
                     <TeamCard
                         key = {index}
@@ -23,7 +26,7 @@ const TeamsList: React.FC<TeamsListProps> = ({ teamsData, teamPageHandler }) => 
                         teamPageHandler = {teamPageHandler}
                     ></TeamCard>
                 ))
-                : ""} */}
+                : ""}
             </ul>
         </section>
     )

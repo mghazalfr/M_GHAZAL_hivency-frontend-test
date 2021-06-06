@@ -36,6 +36,46 @@ p {
   font-size: 2rem;
 }
 
+.buttons-container {
+  width: 130px;
+  height: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.general-button {
+  min-width: 60px;
+  height: 60px;
+  background-color: white;
+  border: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.general-button:hover {
+  background-color: #838977;
+}
+
+.general-button:hover .icon {
+  color: #E0E5D6;
+}
+
 /*---HEADER -------*/
 header {
   background-color: #E0E5D6;
@@ -112,6 +152,97 @@ nav ul li:hover .icon {
   color: #E0E5D6;
 }
 
+/*---MAIN--------*/
+main {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  padding: 50px;
+  margin-top: 150px;
+}
+
+.teams-container {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.teams-container h1 {
+  width: 100%;
+  padding-bottom: 50px;
+  font-family: "Helvetica", sans-serif;
+  text-transform: uppercase;
+  color: #838977;
+  letter-spacing: 2px;
+}
+
+.teams-container__list {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+}
+
+.teams-container__list-item {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-bottom: 50px;
+}
+
+.teams-container__image {
+  width: 100%;
+  height: 250px;
+  padding: 40px;
+  background-color: rgba(224, 229, 214, 0.4);
+}
+
+.teams-container__image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
+.teams-container__info {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #E0E5D6;
+  padding: 10px;
+}
+
+.teams-container__info img {
+  width: 100%;
+  height: 200px;
+  background-color: rgba(224, 229, 214, 0.4);
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+
 /*---------------------------MEDIA QUERIES-----------------------------------------------*/
 @media screen and (min-width: 980px) {
   /*---HEADER -------*/
@@ -139,6 +270,15 @@ nav ul li:hover .icon {
   }
   nav ul li {
     margin-bottom: 20px;
+  }
+  /*---MAIN -----*/
+  main {
+    width: calc(100% - 100px);
+    margin-left: 100px;
+    margin-top: 100px;
+  }
+  .teams-container__list-item {
+    width: 30%;
   }
 }
 /*# sourceMappingURL=App.css.map */
