@@ -4,6 +4,7 @@ import './App.css';
 //Import Components
 import Header from './components/Header';
 import SideNav from './components/SideNav';
+import TeamsList from './components/TeamsList'
 
 //Import Dependencies
 import axios from 'axios';
@@ -44,12 +45,29 @@ const App: React.FC = () => {
     })
   }, [teamId, isLoading]);
 
+  //HANDLERS function--------//
+  const teamPageHandler = (selectedId:string) => {
+    setTeamId(selectedId);
+    setIsLoading(true);
+  }
+
 
   return (
     <div className="App">
       <HashRouter>
         <Header />
         <SideNav />
+        <main>
+          <Route
+            exact path="/"
+            render={(props) => (
+              <TeamsList {...props}
+                teamsData = {teams}
+                teamPageHandler = {teamPageHandler}
+              />
+            )}
+          ></Route>
+        </main>
       </HashRouter>
     </div>
   )
