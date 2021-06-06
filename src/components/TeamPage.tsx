@@ -4,6 +4,7 @@ import React from 'react';
 
 //import Components
 import PlayerCard from './PlayerCard';
+import AddPlayer from './AddPlayer';
 
 interface TeamPageProps {
     teamsData: Teams[] | undefined;
@@ -49,7 +50,7 @@ const TeamPage: React.FC<TeamPageProps> = ({ teamsData, playersData, setPlayers,
                 ))
                 : <h1>No players to show</h1>}
             </ul>
-            {/* { playersData
+            { playersData
             ? <AddPlayer
                 setPlayers = {setPlayers}
                 setNewPlayer = {setNewPlayer}
@@ -57,7 +58,7 @@ const TeamPage: React.FC<TeamPageProps> = ({ teamsData, playersData, setPlayers,
                 players = {playersData}
                 selectedTeam = {selectedTeam}
             ></AddPlayer>
-            : "" } */}
+            : "" }
         </div></>
         : <p>loading...</p>}
         </section>

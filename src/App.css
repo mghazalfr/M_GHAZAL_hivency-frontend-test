@@ -415,8 +415,19 @@ main {
 }
 
 .team-page__player-addition form button {
-  min-width: 60px;
-  margin-left: 20px;
+  width: 100%;
+  height: 60px;
+  border-radius: 30px;
+  background-color: #838977;
+  border: 2px solid #E0E5D6;
+  font-size: 1.2rem;
+  color: #E0E5D6;
+  cursor: pointer;
+}
+
+.team-page__player-addition form button:hover {
+  background-color: #E0E5D6;
+  color: #838977;
 }
 
 /*---------------------------MEDIA QUERIES-----------------------------------------------*/
