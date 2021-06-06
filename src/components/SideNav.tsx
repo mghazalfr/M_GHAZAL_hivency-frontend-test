@@ -5,7 +5,7 @@ import { NavLink } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faUsers } from '@fortawesome/free-solid-svg-icons';
 
-const SideNav = () => {
+const SideNav: React.FC = () => {
     return (
         <nav>
             <ul>
