@@ -1,6 +1,9 @@
 // component that displays the player
 
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
+
+//Import Components
+import EditPlayer from './EditPlayer';
 
 //impot dependencies
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -24,11 +27,23 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ playerId, name, thumb, playersD
     //State that folows the plager change
     const [ change, setChange ] = useState(false);
 
+    //Reference
+    const editRef = useRef<HTMLLIElement>(null);
+
     //USE EFFECTS
     useEffect(() => {
         setPlayerName(playerName);
         setPlayerImage(playerImage);
+
+        //creating a reference for the edit elements
+        const edit = editRef.current;
+        const editForm = edit?.querySelector('.player-edit') as HTMLElement;
+        const editButton = edit?.querySelector('#editButton') as HTMLButtonElement;
+        editButton.addEventListener('click', () => {
+            editForm.style.display="flex";
+        })
     }, [change])
+    
 
     //HANDLER Functions
 
@@ -40,18 +55,6 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ playerId, name, thumb, playersD
         if(arrayDeleted) {
             setPlayers(arrayDeleted)
         }
-    }
-
-    //fucntions that edit the players info------//
-    //Shows the edit form
-    const editPlayerHandler = (e: React.MouseEvent<HTMLButtonElement>) => {
-        e.target.addEventListener('click', () => {
-            const target = e.target as Element;
-            const parent = target.parentElement as HTMLElement;
-            const grandparent = parent.parentElement as HTMLElement;
-            const editform = (grandparent.querySelector('.player-edit') as HTMLElement);
-            editform.style.display="flex";
-        })
     }
 
     //sets the player's new name
@@ -67,7 +70,7 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ playerId, name, thumb, playersD
     }
 
     //handles the form submit and hides it
-    const handleSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
+    const handleEditSubmit = (e: React.FormEvent<HTMLButtonElement>) => {
         e.preventDefault();
         setChange(true);
         const target = e.target as Element;
@@ -79,11 +82,8 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ playerId, name, thumb, playersD
 
 
 
-
-
-
     return (
-        <li className="team-page__player-list-item">
+        <li ref={editRef} className="team-page__player-list-item">
             <div className="player-thumb">
                 {thumb
                 ? <img src={playerImage != "" ? playerImage : thumb} alt={name} />
@@ -92,15 +92,15 @@ const PlayerCard: React.FC<PlayerCardProps> = ({ playerId, name, thumb, playersD
             <h2>{playerName != "" ? playerName : name}</h2>
             <div className="buttons-container">
                 <button onClick={() => deletePlayer(playerId)} className="general-button"><FontAwesomeIcon className="icon" icon={faTrashAlt} /></button>
-                <button onClick={editPlayerHandler} className="general-button"><FontAwesomeIcon className="icon" icon={faUserEdit} /></button>
+                <button className="general-button" id="editButton"><FontAwesomeIcon className="icon" icon={faUserEdit} /></button>
             </div>
-            <div className="player-edit">
-                <form>
-                    <input id="editPlayerName" type="text" placeholder={name} onChange={handleNameChange} />
-                    <input id="editPlayerThumb" type="url" placeholder={thumb} onChange={handleImageChange}/>
-                    <button type="submit" onClick={handleSubmit}>Edit Player</button>
-                </form>
-            </div>
+            <EditPlayer
+                name = {name}
+                thumb = {thumb}
+                handleNameChange = {handleNameChange}
+                handleImageChange = {handleImageChange}
+                handleEditSubmit = {handleEditSubmit}
+            ></EditPlayer>
         </li>
     )
 }
