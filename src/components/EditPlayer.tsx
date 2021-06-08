@@ -15,7 +15,6 @@ const EditPlayer: FC<EditPlayerProps> = ({ name, thumb, handleNameChange, handle
 
     useEffect(() => {
         const  buttonElement = elementRef.current
-        console.log(buttonElement?.parentElement)
     }, []);
 
     return (
